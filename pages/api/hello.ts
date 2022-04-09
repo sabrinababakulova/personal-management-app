@@ -7,8 +7,7 @@ type Data =
       name: string;
       error: string;
     }
-    
-
+ 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
