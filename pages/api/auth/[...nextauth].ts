@@ -8,4 +8,5 @@ export default NextAuth({
     }),
   ],
   secret: process.env.SECRET,
+//   NextAuth: process.env.NEXTAUTH_URL
 });
