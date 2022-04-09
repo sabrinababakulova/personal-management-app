@@ -3,7 +3,17 @@ import Head from 'next/head'
 import { useSession, signOut } from 'next-auth/react'
 import { Button, Flex, Center, Text } from '@chakra-ui/react';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
 function Menu() {
+  useEffect(() => {
+    if (!session) {
+      router.push('/')
+    }
+  })
+  const router = useRouter()
+  const { data: session } = useSession();
+
   return (
     <>
       <Head>
@@ -12,7 +22,12 @@ function Menu() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex mt={4} justify="center" gap={5} direction={["column", "row"]}>
-        <Button onClick={() => signOut()} flex={1} p={7} variant="solid">Sign out</Button>
+        <Button onClick={async () => {
+          router.push('/').then(() => signOut()
+          )
+
+        }
+        } flex={1} p={7} variant="solid">Sign out</Button>
 
         <Link href="/components/InhaPage" passHref>
           <Button flex={3} variant="outline" p={7}>
