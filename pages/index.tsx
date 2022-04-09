@@ -4,16 +4,14 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import SignIn from './components/SignIn'
 import { useSession, signOut } from 'next-auth/react'
-import { Button, Flex, } from '@chakra-ui/react';
 import Menu from './components/Menu'
-import Link from 'next/link'
 
 const Home: NextPage = () => {
 
   const { data: session } = useSession();
   return (
     <div className={styles.container}>
-      
+
       {!session && <SignIn />}
       {session && (
 
