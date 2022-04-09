@@ -7,6 +7,7 @@ import { useSession, signOut } from 'next-auth/react'
 import { Button, Flex, } from '@chakra-ui/react';
 import Menu from './components/Menu'
 import Link from 'next/link'
+
 const Home: NextPage = () => {
 
   const { data: session } = useSession();
