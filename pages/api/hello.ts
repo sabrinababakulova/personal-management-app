@@ -1,13 +1,11 @@
-
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 
-type Data =
-  | {
-      name: string;
-      error: string;
-    }
- 
+type Data = {
+  name: string;
+  error: string;
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -16,6 +14,6 @@ export default async function handler(
   if (session) {
     res.status(200).json({ name: "John Doe", error: "" });
   } else {
-    res.status(401).json({ name:"", error: "permission denied" });
+    res.status(401).json({ name: "", error: "permission denied" });
   }
 }
