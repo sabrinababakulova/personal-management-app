@@ -1,18 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
-import { useSession, signOut } from 'next-auth/react'
 import { Button, Flex, Center, Text } from '@chakra-ui/react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
+import { useSession, getSession, signOut } from 'next-auth/react';
+import { GetServerSideProps } from 'next'
 function Menu() {
-  useEffect(() => {
-    if (!session) {
-      router.push('/')
-    }
-  })
   const router = useRouter()
-  const { data: session } = useSession();
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push('/')
+  //   }
+  // })
 
   return (
     <>
@@ -50,3 +50,5 @@ function Menu() {
 }
 
 export default Menu
+
+

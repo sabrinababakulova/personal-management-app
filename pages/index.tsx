@@ -11,7 +11,10 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
 
-      {!session && <SignIn />}
+      {!session && <main className={styles.main}>
+        <SignIn />
+      </main>
+      }
       {session && (
 
         <main className={styles.main}>
