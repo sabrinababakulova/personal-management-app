@@ -19,13 +19,12 @@ export default NextAuth({
     // },
     async signIn({ user, account, profile, email, credentials }) {
       if (
-        user.email !== process.env.NECESARYEMAIL &&
-        user.name !== process.env.NECESARYNAME
+        user.email === process.env.NECESARYEMAIL &&
+        user.name === process.env.NECESARYNAME
       ) {
-        return false;
+        return true;
       }
-      console.log(user.email);
-      return true;
+      return false;
     },
     // async redirect({ url, baseUrl }) {
     //   if (url !== baseUrl) {
