@@ -2,7 +2,6 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import { NextAuthAction } from "next-auth/lib/types";
 import GithubProvider from "next-auth/providers/github";
 
-
 export default NextAuth({
   providers: [
     GithubProvider({
@@ -15,7 +14,8 @@ export default NextAuth({
     async signIn({ user, account, profile, email, credentials }) {
       if (
         user.email === process.env.NECESARYEMAIL &&
-        user.name === process.env.NECESARYNAME
+        user.name === process.env.NECESARYNAME &&
+        profile.login === process.env.NECESARYLOGIN
       ) {
         return true;
       }
