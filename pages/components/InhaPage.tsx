@@ -11,7 +11,7 @@ function InhaPage() {
         <>
             <Box className={styles.container}>
                 <Menu />
-                <Flex justify="space-around" gap={5} textAlign="center">
+                <Flex justify="space-around" gap={5} textAlign="center" direction={["column", "column", "column", "row"]}>
                     {/* GPA OVER ALL YEARS */}
                     <Box borderWidth="2px" borderRadius='lg' w="100%" h="50vh">
                         <Text fontSize="2xl">

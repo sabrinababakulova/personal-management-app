@@ -1,23 +1,25 @@
-import { Box, Text, Flex, Divider, Grid, Button } from "@chakra-ui/react"
+import { Box, Text, Flex, Divider, Grid, Button, GridItem } from "@chakra-ui/react"
 import Menu from './Menu'
 import styles from '../../styles/Home.module.css'
 import { useSession, getSession } from 'next-auth/react';
 import { GetServerSideProps } from 'next'
+import ModalAdding from './ModalAdding';
 
 function FinancePage() {
     return (
         <>
             <Box className={styles.container}>
                 <Menu />
-                <Flex gap={5} textAlign="center">
+                <Flex gap={5} textAlign="center" direction={["column","column","column", "row"]}>
                     <Box flex={1}>
-                        <Box h="100px" borderWidth="2px">
+                        <Box h="100px" borderWidth="2px" mb={2}>
                             <Text>Monthly Budget</Text>
+                            <Divider />
 
                         </Box>
                         <Box h="100px" borderWidth="2px">
                             <Text>In the Card</Text>
-
+                            <Divider />
                         </Box>
                     </Box>
                     {/* <Box borderWidth="2px" flex={2}>
@@ -28,14 +30,31 @@ function FinancePage() {
                     <Box flex={2} borderWidth="2px">
                         <Text fontSize={["15px", "17px", "2xl"]} pos="relative">
                             Spenditure
-                            <Button pos="absolute" right="2%" size="sm" top="15%" fontSize="20px">Add Item</Button>
+                            <Button pos="absolute" right="2%" size="xs" top="27%" onClick={() => {
+                                <ModalAdding />
+                            }}>Add Item</Button>
                         </Text>
                         <Divider h={2} />
                         <Flex justify="space-around">
                             <Text>Item</Text>
                             <Text>Amount</Text>
                         </Flex>
-                        <Grid>
+                        <Grid templateColumns="repeat(2, 1fr)" gap={1}>
+                            {/* There will be prop of items */}
+                            <GridItem borderWidth="2px">
+                                <Box>
+                                    <Text>Item</Text>
+                                    <Divider />
+                                </Box>
+                            </GridItem>
+
+                            {/* There will be props of amount of money spent */}
+                            <GridItem borderWidth="2px">
+                                <Box>
+                                    <Text>Amount</Text>
+                                    <Divider />
+                                </Box>
+                            </GridItem>
 
                         </Grid>
 
