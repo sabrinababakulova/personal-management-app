@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Divider } from "@chakra-ui/react"
+import { Box, Text, Flex, Divider, Grid, Button } from "@chakra-ui/react"
 import Menu from './Menu'
 import styles from '../../styles/Home.module.css'
 import { useSession, getSession } from 'next-auth/react';
@@ -9,13 +9,37 @@ function FinancePage() {
         <>
             <Box className={styles.container}>
                 <Menu />
-                <Flex justify="space-around">
+                <Flex gap={5} textAlign="center">
+                    <Box flex={1}>
+                        <Box h="100px" borderWidth="2px">
+                            <Text>Monthly Budget</Text>
+
+                        </Box>
+                        <Box h="100px" borderWidth="2px">
+                            <Text>In the Card</Text>
+
+                        </Box>
+                    </Box>
+                    {/* <Box borderWidth="2px" flex={2}>
                     <Text>
                         income
                     </Text>
-                    <Text>
-                        outcome
-                    </Text>
+                    </Box> */}
+                    <Box flex={2} borderWidth="2px">
+                        <Text fontSize={["15px", "17px", "2xl"]} pos="relative">
+                            Spenditure
+                            <Button pos="absolute" right="2%" size="sm" top="15%" fontSize="20px">Add Item</Button>
+                        </Text>
+                        <Divider h={2} />
+                        <Flex justify="space-around">
+                            <Text>Item</Text>
+                            <Text>Amount</Text>
+                        </Flex>
+                        <Grid>
+
+                        </Grid>
+
+                    </Box>
 
                 </Flex>
             </Box>
