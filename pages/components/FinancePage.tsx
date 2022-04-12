@@ -30,9 +30,10 @@ function FinancePage() {
                     <Box flex={2} borderWidth="2px">
                         <Text fontSize={["15px", "17px", "2xl"]} pos="relative">
                             Spenditure
-                            <Button pos="absolute" right="2%" size="xs" top="27%" onClick={() => {
+                            <ModalAdding/>
+                            {/* <Button pos="absolute" right="2%" size="xs" top="27%" onClick={() => {
                                 <ModalAdding />
-                            }}>Add Item</Button>
+                            }}>Add Item</Button> */}
                         </Text>
                         <Divider h={2} />
                         <Flex justify="space-around">
