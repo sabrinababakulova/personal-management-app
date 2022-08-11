@@ -15,5 +15,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
-
-// https://sabrinastuff-nqh7udkxc-sabrina34352.vercel.app/

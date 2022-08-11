@@ -1,19 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
-import { Button, Flex, Center, Text } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react';
-import { useSession, getSession, signOut } from 'next-auth/react';
-import { GetServerSideProps } from 'next'
+import { signOut } from 'next-auth/react';
 function Menu() {
   const router = useRouter()
-  // useEffect(() => {
-  //   if (!session) {
-  //     router.push('/')
-  //   }
-  // })
-
   return (
     <>
       <Head>
@@ -28,12 +20,7 @@ function Menu() {
         }
         } flex={1} p={7} variant="solid">Sign out</Button>
 
-        <Link href="/components/InhaPage" passHref>
-          <Button flex={3} variant="outline" p={7}>
-            INHA STUFF
-          </Button>
-        </Link>
-        <Link href="/components/FinancePage" passHref>
+        <Link href="/FinancePage" passHref>
           <Button flex={3} variant="outline" p={7}>
             FINANCE MANAGEMENT
           </Button>
