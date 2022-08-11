@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import SignIn from './components/SignIn'
+import SignIn from '../components/SignIn'
 import { useSession } from 'next-auth/react'
-import Menu from './components/Menu'
+import Menu from '../components/Menu'
 
 const Home: NextPage = () => {
 

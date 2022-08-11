@@ -1,6 +1,6 @@
 // import React from 'react'
 import { Box, Text, Flex, Divider, Grid } from "@chakra-ui/react"
-import Menu from './Menu'
+import Menu from '../../components/Menu'
 import styles from '../../styles/Home.module.css'
 import { useSession, getSession, signOut } from 'next-auth/react';
 import { GetServerSideProps } from 'next'

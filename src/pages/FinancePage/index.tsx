@@ -1,9 +1,9 @@
 import { Box, Text, Flex, Divider, Grid, Button, GridItem } from "@chakra-ui/react"
-import Menu from './Menu'
+import Menu from '../../components/Menu'
 import styles from '../../styles/Home.module.css'
-import { useSession, getSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 import { GetServerSideProps } from 'next'
-import ModalAdding from './ModalAdding';
+import ModalAdding from '../../components/ModalAdding';
 
 function FinancePage() {
     return (
