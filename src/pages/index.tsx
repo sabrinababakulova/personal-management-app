@@ -1,22 +1,20 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import SignIn from '../components/SignIn'
-import { useSession } from 'next-auth/react'
-import Menu from '../components/Menu'
+import type { NextPage } from "next";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import SignIn from "../components/SignIn";
+import { useSession } from "next-auth/react";
+import Menu from "../components/Menu";
 
 const Home: NextPage = () => {
-
   const { data: session } = useSession();
   return (
     <div className={styles.container}>
-
-      {!session && <main className={styles.main}>
-        <SignIn />
-      </main>
-      }
+      {!session && (
+        <main className={styles.main}>
+          <SignIn />
+        </main>
+      )}
       {session && (
-
         <main className={styles.main}>
           <Menu />
         </main>
@@ -27,14 +25,13 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-
         </a>
       </footer>
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
