@@ -19,7 +19,7 @@ function SignIn() {
           size="lg"
           variant="outline"
           onClick={() => {
-            signIn();
+            signIn("github");
           }}
         >
           {" "}

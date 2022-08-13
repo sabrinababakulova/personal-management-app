@@ -7,7 +7,6 @@ import {
   Button,
   GridItem,
 } from "@chakra-ui/react";
-import Menu from "../../components/Menu";
 import styles from "../../styles/Home.module.css";
 import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
@@ -17,7 +16,6 @@ function FinancePage() {
   return (
     <>
       <Box className={styles.container}>
-        <Menu />
         <Flex
           gap={5}
           textAlign="center"
@@ -33,11 +31,9 @@ function FinancePage() {
               <Divider />
             </Box>
           </Box>
-          {/* <Box borderWidth="2px" flex={2}>
-                    <Text>
-                        income
-                    </Text>
-                    </Box> */}
+          <Box borderWidth="2px" flex={2}>
+            <Text>income</Text>
+          </Box>
           <Box flex={2} borderWidth="2px">
             <Text fontSize={["15px", "17px", "2xl"]} pos="relative">
               Spenditure

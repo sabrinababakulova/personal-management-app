@@ -3,20 +3,19 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import SignIn from "../components/SignIn";
 import { useSession } from "next-auth/react";
-import Menu from "../components/Menu";
-
+import { getSession } from "next-auth/react";
+import { GetServerSideProps } from "next";
 const Home: NextPage = () => {
   const { data: session } = useSession();
   return (
     <div className={styles.container}>
-      {!session && (
+      {!session ? (
         <main className={styles.main}>
           <SignIn />
         </main>
-      )}
-      {session && (
+      ) : (
         <main className={styles.main}>
-          <Menu />
+          <p>Hello World!</p>
         </main>
       )}
       <footer className={styles.footer}>
@@ -35,3 +34,21 @@ const Home: NextPage = () => {
   );
 };
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination:
+          "/api/auth/signin?callbackUrl=https://sabrinastuff.vercel.app/",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      session,
+    },
+  };
+};
