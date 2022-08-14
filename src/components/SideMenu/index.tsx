@@ -18,10 +18,10 @@ const SideMenu = () => {
       <Link href="/Personal/Emails" passHref>
         <Button h={20}>Emails</Button>
       </Link>
-      <Link href="/Personal/University">
+      <Link href="/Personal/University" passHref>
         <Button h={20}>University</Button>
       </Link>
-      <Link href="/Personal/Finances">
+      <Link href="/Personal/Finances" passHref>
         <Button h={20}>Finances</Button>
       </Link>
     </Flex>

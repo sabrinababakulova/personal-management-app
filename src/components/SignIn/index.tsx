@@ -27,7 +27,7 @@ function SignIn() {
             Authorize with Github
           </Link>
         </Button>
-        <Link href="https://t.me/get_rektttt">
+        <Link href="https://t.me/get_rektttt" passHref>
           <Button>Ask me for a signIn</Button>
         </Link>
       </Flex>

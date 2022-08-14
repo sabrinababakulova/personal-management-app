@@ -14,10 +14,9 @@ function Menu() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex m={4} justify="center" gap={5} direction={["column", "row"]} mb={5}>
-
         <Link href="/Personal" passHref>
           <Button flex={3} variant="outline" p={7}>
-            Sabrina's Personal
+            Sabrina&apos;s Personal
           </Button>
         </Link>
 
