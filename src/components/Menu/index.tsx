@@ -14,25 +14,16 @@ function Menu() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex m={4} justify="center" gap={5} direction={["column", "row"]} mb={5}>
-        <Button
-          onClick={async () => {
-            router.push("/").then(() => signOut());
-          }}
-          flex={1}
-          p={7}
-          variant="solid"
-        >
-          Sign out
-        </Button>
 
-        <Link href="/Finances" passHref>
+        <Link href="/Personal" passHref>
           <Button flex={3} variant="outline" p={7}>
-            FINANCE MANAGEMENT
+            Sabrina's Personal
           </Button>
         </Link>
-        <Link href="/Emails" passHref>
+
+        <Link href="/Blog" passHref>
           <Button flex={3} variant="outline" p={7}>
-            All Emails
+            Blog
           </Button>
         </Link>
 

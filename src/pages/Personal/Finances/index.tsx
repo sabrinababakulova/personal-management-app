@@ -7,15 +7,14 @@ import {
   Button,
   GridItem,
 } from "@chakra-ui/react";
-import styles from "../../styles/Home.module.css";
 import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
-import ModalAdding from "../../components/ModalAdding";
+import ModalAdding from "../../../components/ModalAdding";
 
 function FinancePage() {
   return (
     <>
-      <Box className={styles.container}>
+      <Box>
         <Flex
           gap={5}
           textAlign="center"

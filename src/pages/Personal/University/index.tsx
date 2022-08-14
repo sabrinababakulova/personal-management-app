@@ -1,15 +1,11 @@
-// import React from 'react'
 import { Box, Text, Flex, Divider, Grid } from "@chakra-ui/react";
-import Menu from "../../components/Menu";
-import styles from "../../styles/Home.module.css";
-import { useSession, getSession, signOut } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
 
 function InhaPage() {
   return (
     <>
-      <Box className={styles.container}>
-        <Menu />
+      <Box>
         <Flex
           justify="space-around"
           gap={5}

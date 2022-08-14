@@ -4,7 +4,7 @@ import Link from "next/link";
 function SignIn() {
   return (
     <Box>
-      <Flex mt={5} direction="column" justify="center" align="center">
+      <Flex mt={5} direction="column" justify="center" align="center" gap={5}>
         <Text fontSize={25} m={5}>
           You need to be Sabrina in order to access the info in this website
         </Text>
@@ -27,6 +27,9 @@ function SignIn() {
             Authorize with Github
           </Link>
         </Button>
+        <Link href="https://t.me/get_rektttt">
+          <Button>Ask me for a signIn</Button>
+        </Link>
       </Flex>
     </Box>
     // <div>Authorization</div>
