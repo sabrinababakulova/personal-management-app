@@ -1,16 +1,27 @@
-import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, styled } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <main className={styles.main}>
-        <Box mt={16}>
-          <Heading as="h1" size="3xl" noOfLines={1}>
-            Sabrina Babakulova
+        <Box
+          className={styles.container}
+          mt={16}
+          p={5}
+          border="2px solid #F9F9F9"
+          borderRadius={20}
+        >
+          <Heading
+          fontFamily="Roboto Mono, monospace"
+            as="h1"
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            noOfLines={1}
+          >
+            Sabrina Babakulova|
           </Heading>
-          <Box fontSize={22} mt={14}>
+          <Box fontSize={18} mt={14}>
             Full-stack web-developer wannabe and a big try hard.
             <br />
             Student of INHA university, and working at{" "}
@@ -45,7 +56,7 @@ const Home: NextPage = () => {
             and to get used to the concept of consistency.
             <br />
             <br />
-            <Flex gap={2}>
+            <Box>
               The{" "}
               <Link
                 href="/Personal"
@@ -60,20 +71,21 @@ const Home: NextPage = () => {
                 Sabrina&apos;s Personal
               </Link>{" "}
               is a place where I keep my{" "}
-              <Box position="relative">
-                <Box
-                  bg="white"
-                  zIndex="1"
+              <Box position="relative" w="fit-content">
+                <Text
+                  className={styles.container}
+                  position="relative"
+                  zIndex="2"
                   transition="filter .3s ease"
                   _hover={{ filter: "opacity(0)" }}
                 >
                   spenditure in check
-                </Box>
-                <Link position="absolute" zIndex="-1" top={0} right={50}>
+                </Text>
+                <Link position="absolute" zIndex="1" top={0}>
                   shit together
                 </Link>
               </Box>
-            </Flex>
+            </Box>
           </Box>
         </Box>
       </main>
@@ -90,7 +102,7 @@ const Home: NextPage = () => {
           </span>
         </a>
       </footer>
-    </div>
+    </>
   );
 };
 export default Home;

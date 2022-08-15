@@ -1,11 +1,22 @@
-.container {
-  padding: 0 2rem;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
 .main {
   min-height: 80vh;
-  
   flex: 1;
+}
+.container {
+  background: linear-gradient(-45deg, #f3f1f5, #dff6ff);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
 }
 
 .footer {
