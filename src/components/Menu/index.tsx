@@ -2,10 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Button, Flex } from "@chakra-ui/react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { signOut } from "next-auth/react";
 function Menu() {
-  const router = useRouter();
   return (
     <>
       <Head>
@@ -27,7 +24,7 @@ function Menu() {
         </Link>
 
         <Link href="/" passHref>
-          <Button flex={1} p={7}>
+          <Button variant="outline" flex={1} p={7}>
             GO HOME
           </Button>
         </Link>
