@@ -18,6 +18,10 @@
   background-size: 400% 400%;
   animation: gradient 7s ease infinite;
 }
+.wrapper {
+  max-width: 900px;
+  margin: 1em auto 2em;
+}
 
 .footer {
   display: flex;

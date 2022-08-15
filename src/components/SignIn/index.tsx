@@ -4,8 +4,8 @@ import Link from "next/link";
 function SignIn() {
   return (
     <Box>
-      <Flex mt={5} direction="column" justify="center" align="center" gap={5}>
-        <Text fontSize={25} m={5}>
+      <Flex direction="column" justify="center" align="center" gap={6}>
+        <Text fontSize={22} align="center">
           You need to be Sabrina in order to access the info on this page
         </Text>
         <Image
@@ -14,22 +14,21 @@ function SignIn() {
           boxSize="300px"
           w="385px"
         />
-        <Button
-          mt={5}
-          size="lg"
-          variant="outline"
-          onClick={() => {
-            signIn("github");
-          }}
-        >
-          {" "}
+        <Flex gap={5} direction={["column", "row"]}>
           <Link href="/" passHref>
-            Authorize with Github
+            <Button
+              variant="outline"
+              onClick={() => {
+                signIn("github");
+              }}
+            >
+              Authorize with Github
+            </Button>
           </Link>
-        </Button>
-        <Link href="https://t.me/get_rektttt" passHref>
-          <Button>Ask me for a signIn</Button>
-        </Link>
+          <Link href="https://t.me/get_rektttt" passHref>
+            <Button variant="outline">Ask me for a sign in</Button>
+          </Link>
+        </Flex>
       </Flex>
     </Box>
     // <div>Authorization</div>
