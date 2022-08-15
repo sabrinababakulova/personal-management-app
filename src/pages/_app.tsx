@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SessionProvider session={pageProps.session}>
       <ChakraProvider>
         <Layout>
-          <Box m="auto 32em">
+          <Box maxW="900px" m="6em auto 0">
           <Component {...pageProps} />
           </Box>
         </Layout>
