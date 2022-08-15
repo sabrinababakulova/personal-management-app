@@ -1,7 +1,6 @@
 import { Box, Text, Flex, Divider, Grid } from "@chakra-ui/react";
 import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
-
 function InhaPage() {
   return (
     <>

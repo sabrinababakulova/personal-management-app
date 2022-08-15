@@ -6,7 +6,7 @@ function SignIn() {
     <Box>
       <Flex mt={5} direction="column" justify="center" align="center" gap={5}>
         <Text fontSize={25} m={5}>
-          You need to be Sabrina in order to access the info in this website
+          You need to be Sabrina in order to access the info on this page
         </Text>
         <Image
           alt="bitch you better be sabrina /euphoria quote/"
