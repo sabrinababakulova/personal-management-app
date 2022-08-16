@@ -2,28 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import { Link, Flex } from "@chakra-ui/react";
-import Telegram from "../../assets/Telegram.svg";
-import Instagram from "../../assets/Instagram.svg";
-import LinkedIn from "../../assets/LinkedIn.svg";
-import Github from "../../assets/Github.svg";
-const links = [
-  {
-    href: "https://t.me/get_rektttt",
-    icon: <Telegram />,
-  },
-  {
-    href: "https://www.instagram.com/sabrina_smthelse/",
-    icon: <Instagram />,
-  },
-  {
-    href: "https://www.linkedin.com/in/sabrina-babakulova-a8a8a8a8/",
-    icon: <LinkedIn />,
-  },
-  {
-    href: "https://www.github.com/sabrina34352",
-    icon: <Github />,
-  },
-];
+import { links } from "../Links";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -38,7 +17,7 @@ const Footer = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-        <Flex gap={[2, 6]} mr={4} display={["none", "flex"]}>
+        <Flex gap={[2, 6]} mr={4} display={["none", "none", "flex"]}>
           {links.map((link) => (
             <Link
               target="_blank"
