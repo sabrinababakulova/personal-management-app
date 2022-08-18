@@ -11,5 +11,23 @@
     "line8": "spenditure in check ",
     "line8undercover": "shit together ",
     "line9": "check out the portfolio by scrolling down!"
+  },
+  "menu": {
+    "title": "Quick Menu",
+    "personal": "Sabrina's personal",
+    "blog": "Blog",
+    "goHome": "Home"
+  },
+  "portfolio": {
+    "title": "The Portfolio",
+    "order": "in chronological order!"
+  },
+  "blog": {
+    "errMsg": "The blog does not exist, the database is not connected, and everything is stored in local storage, which is not ideal"
+  },
+  "notAuthorized": {
+    "explanation": "You need to be Sabrina in order to access the info on this page",
+    "authBtn": "Authorize with Github",
+    "askForAuth": "Ask me for a sign in"
   }
 }

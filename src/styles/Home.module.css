@@ -21,6 +21,7 @@
   }
 }
 .main {
+  padding: 0 10px;
   min-height: 80vh;
   flex: 1;
 }

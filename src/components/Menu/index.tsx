@@ -16,7 +16,10 @@ import MenuBtn from "../../assets/Menu.svg";
 import Link from "next/link";
 import { links } from "../Links";
 import styles from "../../styles/Home.module.css";
+import { useTranslation } from "next-i18next";
+
 function Menu() {
+  const { t } = useTranslation("common");
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -59,7 +62,7 @@ function Menu() {
                   boxShadow: "0px",
                 }}
               >
-                Sabrina&apos;s Personal
+                {t("menu.personal")}
               </Button>
             </Flex>
           </Link>
@@ -71,7 +74,7 @@ function Menu() {
                 boxShadow: "0px",
               }}
             >
-              blog
+              {t("menu.blog")}
             </Button>
           </Link>
 
@@ -82,7 +85,7 @@ function Menu() {
                 boxShadow: "0px",
               }}
             >
-              go home
+              {t("menu.goHome")}
             </Button>
           </Link>
         </Flex>
@@ -90,7 +93,7 @@ function Menu() {
       <Drawer placement="bottom" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader className={styles.menu}> Quick Menu</DrawerHeader>
+          <DrawerHeader className={styles.menu}>{t("menu.title")}</DrawerHeader>
           <DrawerBody mt={8} mb={8}>
             <Flex direction="column" gap={10}>
               <Link href="/Personal" passHref>
@@ -102,7 +105,7 @@ function Menu() {
                     boxShadow: "0px",
                   }}
                 >
-                  Sabrina&apos;s Personal
+                  {t("menu.personal")}
                 </Button>
               </Link>
 
@@ -115,7 +118,7 @@ function Menu() {
                     boxShadow: "0px",
                   }}
                 >
-                  blog
+                  {t("menu.blog")}
                 </Button>
               </Link>
 
@@ -128,7 +131,7 @@ function Menu() {
                     boxShadow: "0px",
                   }}
                 >
-                  go home
+                  {t("menu.goHome")}
                 </Button>
               </Link>
               <Flex gap={6} justify="center" mr={4}>
@@ -150,5 +153,4 @@ function Menu() {
     </>
   );
 }
-
 export default Menu;

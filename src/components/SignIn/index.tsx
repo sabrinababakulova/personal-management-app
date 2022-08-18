@@ -1,12 +1,13 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-function SignIn() {
+
+function SignIn({ locale }: any) {
   return (
     <Box>
       <Flex direction="column" justify="center" align="center" gap={6}>
         <Text fontSize={22} align="center">
-          You need to be Sabrina in order to access the info on this page
+          {locale("notAuthorized.explanation")}
         </Text>
         <Image
           alt="bitch you better be sabrina /euphoria quote/"
@@ -22,16 +23,17 @@ function SignIn() {
                 signIn("github");
               }}
             >
-              Authorize with Github
+              {locale("notAuthorized.authBtn")}
             </Button>
           </Link>
           <Link href="https://t.me/get_rektttt" passHref>
-            <Button variant="outline">Ask me for a sign in</Button>
+            <Button variant="outline">
+              {locale("notAuthorized.askForAuth")}
+            </Button>
           </Link>
         </Flex>
       </Flex>
     </Box>
-    // <div>Authorization</div>
   );
 }
 

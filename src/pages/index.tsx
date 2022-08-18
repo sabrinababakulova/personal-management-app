@@ -4,10 +4,14 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import InfoBlock from "../components/InfoBlock";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
-  const { t }: any = useTranslation("common");
+  const router = useRouter();
+  const { locale } = router;
+  console.log(locale);
+  const { t } = useTranslation("common");
   return (
     <>
       <Box h="100vh">
@@ -50,7 +54,7 @@ const Home: NextPage = () => {
                 <a className={styles.simpleLink}> {t("description.line6")}</a>
               </Link>{" "}
               {t("description.line7")}
-              <Box position="relative" w="fit-content">
+              <Box position="relative">
                 <Text
                   className={styles.container}
                   position="relative"
@@ -71,8 +75,8 @@ const Home: NextPage = () => {
         </Box>
       </Box>
       <Box textAlign="center">
-        <Heading>The Portfolio</Heading>
-        <Text>in chronological order!</Text>
+        <Heading>{t("portfolio.title")}</Heading>
+        <Text>{t("portfolio.order")}</Text>
         <InfoBlock>One Bit</InfoBlock>
       </Box>
     </>
