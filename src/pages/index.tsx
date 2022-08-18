@@ -1,89 +1,94 @@
-import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
+import { Box, Heading, Text, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
+import InfoBlock from "../components/InfoBlock";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { locale } = router;
+  console.log(locale);
+  const { t } = useTranslation("common");
   return (
-    <Box
-      className={styles.container}
-      p={5}
-      border="2px solid #F9F9F9"
-      borderRadius={20}
-    >
-      <Heading
-        fontFamily="Roboto Mono, monospace"
-        as="h1"
-        fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-        noOfLines={1}
-      >
-        Sabrina Babakulova|
-      </Heading>
-      <Box fontSize={18} mt={8}>
-        Full-stack web-developer wannabe and a big try hard.
-        <br />
-        Student of INHA university, and working at{" "}
-        <Link
-          color="red.400"
-          href="https://www.itechart.com/"
-          _hover={{ filter: "opacity(0.6)" }}
-          _focus={{
-            boxShadow: "0px",
-          }}
-          borderBottom="1px dashed red"
-        >
-          iTechArt
-        </Link>{" "}
-        to make my life spicier.
-        <br />
-        <br />
-        Keeping the{" "}
-        <Link
-          href="/Blog"
-          size="xl"
-          borderRadius="0"
-          borderBottom="1px dashed black"
-          _hover={{ filter: "opacity(0.6)" }}
-          _focus={{
-            boxShadow: "0px",
-          }}
-        >
-          blog
-        </Link>{" "}
-        about the innovations that I make/find in the sphere of programming, and
-        to get used to the concept of consistency.
-        <br />
-        <br />
-        <Box>
-          The{" "}
-          <Link
-            href="/Personal"
-            size="xl"
-            borderRadius="0"
-            borderBottom="1px dashed black"
-            _hover={{ filter: "opacity(0.6)" }}
-            _focus={{
-              boxShadow: "0px",
-            }}
+    <>
+      <Box h="100vh">
+        <Box className={styles.container} p={5} borderRadius={20}>
+          <Heading
+            fontFamily="Roboto Mono, monospace"
+            as="h1"
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            noOfLines={1}
           >
-            Sabrina&apos;s Personal
-          </Link>{" "}
-          is a place where I keep my{" "}
-          <Box position="relative" w="fit-content">
-            <Text
-              className={styles.container}
-              position="relative"
-              zIndex="2"
-              transition="filter .3s ease"
-              _hover={{ filter: "opacity(0)" }}
+            {t("myName")}
+            <a className={styles.straighDash}>|</a>
+          </Heading>
+          <Box fontSize={18} mt={8}>
+            {t("description.line1")}
+            <ChakraLink
+              color="red.400"
+              href="https://www.itechart.com/"
+              target="_blank"
+              _hover={{ filter: "opacity(0.6)" }}
+              _focus={{
+                boxShadow: "0px",
+              }}
+              borderBottom="1px dashed red"
             >
-              spenditure in check
-            </Text>
-            <Link position="absolute" zIndex="1" top={0}>
-              shit together
-            </Link>
+              iTechArt
+            </ChakraLink>{" "}
+            {t("description.line2")}
+            <br />
+            <br />
+            {t("description.line3")}
+            <Link href="/Blog" passHref>
+              <a className={styles.simpleLink}> {t("description.line4")}</a>
+            </Link>{" "}
+            {t("description.line5")}
+            <br />
+            <br />
+            <Box>
+              <Link href="/Personal" passHref>
+                <a className={styles.simpleLink}> {t("description.line6")}</a>
+              </Link>{" "}
+              {t("description.line7")}
+              <Box position="relative">
+                <Text
+                  className={styles.container}
+                  position="relative"
+                  zIndex="2"
+                  transition="filter .3s ease"
+                  _hover={{ filter: "opacity(0)" }}
+                >
+                  {t("description.line8")}
+                </Text>
+                <ChakraLink position="absolute" zIndex="1" top={0}>
+                  {t("description.line8undercover")}{" "}
+                </ChakraLink>
+              </Box>
+            </Box>
+            <br />
+            <Text>{t("description.line9")}</Text>
           </Box>
         </Box>
       </Box>
-    </Box>
+      <Box textAlign="center">
+        <Heading>{t("portfolio.title")}</Heading>
+        <Text>{t("portfolio.order")}</Text>
+        <InfoBlock>One Bit</InfoBlock>
+      </Box>
+    </>
   );
 };
+// @ts-ignore
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", ["common"])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 export default Home;

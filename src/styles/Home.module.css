@@ -9,10 +9,36 @@
     background-position: 0% 50%;
   }
 }
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .main {
+  padding: 0 10px;
   min-height: 80vh;
   flex: 1;
 }
+.straighDash {
+  animation: blinking 1s ease infinite;
+  transition: 0s ease-in-out;
+}
+
+.simpleLink {
+  opacity: 0.8;
+
+  text-decoration: underline dashed;
+}
+.simpleLink:hover {
+  opacity: 0.6;
+}
+
 .container {
   transition: 0.2s ease-in-out;
   background: linear-gradient(-45deg, #f3f1f5, #dff6ff);
@@ -49,9 +75,9 @@
     background: white;
   }
   .menu {
-    background: linear-gradient(-45deg, #ffeded, #fbfbfb);
+    background: linear-gradient(-45deg, #fff, #dff6ff);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     text-align: center;
   }
 }

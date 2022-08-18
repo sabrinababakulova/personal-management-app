@@ -12,7 +12,7 @@ export const links = [
     icon: <Instagram />,
   },
   {
-    href: "https://www.linkedin.com/in/sabrina-babakulova-a8a8a8a8/",
+    href: "https://www.linkedin.com/in/sabrina-babakulova-339755210/",
     icon: <LinkedIn />,
   },
   {

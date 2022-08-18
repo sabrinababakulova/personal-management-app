@@ -1,0 +1,33 @@
+{
+  "myName": "Sabrina Babakulova ",
+  "description": {
+    "line1": "Full-stack web-developer wannabe and a big try hard. Working at ",
+    "line2": "to make my life spicier. ",
+    "line3": "Keeping the ",
+    "line4": "blog ",
+    "line5": " about the innovations that I make/find in the sphere of programming, and to get used to the concept of consistency. ",
+    "line6": "Sabrina's Personal ",
+    "line7": "is a place where I keep my ",
+    "line8": "spenditure in check ",
+    "line8undercover": "shit together ",
+    "line9": "check out the portfolio by scrolling down!"
+  },
+  "menu": {
+    "title": "Quick Menu",
+    "personal": "Sabrina's personal",
+    "blog": "Blog",
+    "goHome": "Home"
+  },
+  "portfolio": {
+    "title": "The Portfolio",
+    "order": "in chronological order!"
+  },
+  "blog": {
+    "errMsg": "The blog does not exist, the database is not connected, and everything is stored in local storage, which is not ideal"
+  },
+  "notAuthorized": {
+    "explanation": "You need to be Sabrina in order to access the info on this page",
+    "authBtn": "Authorize with Github",
+    "askForAuth": "Ask me for a sign in"
+  }
+}
