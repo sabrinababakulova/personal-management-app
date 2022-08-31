@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import {Box, Heading, Text, Link as ChakraLink} from "@chakra-ui/react";
+import React, { FC } from 'react';
+import { Box, Heading, Text, Link as ChakraLink } from '@chakra-ui/react';
 
 interface Props {
   children?: React.ReactNode;
