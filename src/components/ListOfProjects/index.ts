@@ -1,6 +1,6 @@
 import Mimir from '../../assets/Mimir.png';
 import Hackers from '../../assets/hackers.png';
-import Ellty from "../../assets/ellty.png";
+import Ellty from '../../assets/ellty.png';
 export const ListOfProjects = [
   {
     id: 1,
@@ -52,6 +52,7 @@ export const ListOfProjects = [
         description:
           'Personal project, A website where developers, particularly hackers, can buy stuff for themselves, save it to the cart, register on the site and finish the purchase with payment. The site is based on the React.js',
         image: Hackers,
+        link: 'https://online-shop-for-hackers.vercel.app/',
         stack: ['React'],
       },
       {
@@ -60,6 +61,7 @@ export const ListOfProjects = [
         description:
           'Personal project, This is portfolio-introduction website, made as a start of my career, and all the contacts, won prizes are displayed there',
         stack: ['HTML', 'CSS', 'Javascript'],
+        link: 'https://sabrina34352.github.io',
       },
     ],
   },
