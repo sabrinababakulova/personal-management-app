@@ -25,6 +25,7 @@ export const ListOfProjects = [
           'Docker',
           'Redux Toolkit',
           'Postgres',
+          'Jest testing library',
         ],
       },
       {
@@ -48,15 +49,29 @@ export const ListOfProjects = [
       },
       {
         id: 3,
+        title: 'Memorization cards',
+        description:
+          'A website, where user can find cards with pokemon description, and change the title and body as user wants, and save it to local storage. User can also delete the card, and add new card. There is also admin panel, which helps to control ReadOnly property of cards.',
+        stack: [
+          'React',
+          'Redux',
+          'Jest Testing Library',
+          'Axios',
+          'Chakra UI',
+          'Styled Components',
+        ],
+      },
+      {
+        id: 4,
         title: 'e-Shop for hackers',
         description:
           'Personal project, A website where developers, particularly hackers, can buy stuff for themselves, save it to the cart, register on the site and finish the purchase with payment. The site is based on the React.js',
         image: Hackers,
         link: 'https://online-shop-for-hackers.vercel.app/',
-        stack: ['React'],
+        stack: ['React', 'CSS'],
       },
       {
-        id: 4,
+        id: 5,
         title: 'Self introductory website',
         description:
           'Personal project, This is portfolio-introduction website, made as a start of my career, and all the contacts, won prizes are displayed there',

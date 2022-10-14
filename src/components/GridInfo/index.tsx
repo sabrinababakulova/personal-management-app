@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   Link,
+  Badge,
 } from '@chakra-ui/react';
 import { ListOfProjects } from '../ListOfProjects';
 import Image from 'next/image';
@@ -18,61 +19,53 @@ const GridInfo = () => {
       {ListOfProjects.map((sphere) => {
         return (
           <div key={sphere.id}>
-            <Heading>{sphere.name}</Heading>
-            <Grid gap={2} templateColumns='repeat(4, 1fr)'>
+            <Heading mb={20}>{sphere.name}</Heading>
+            <Grid gap={12}>
               {sphere.projects.map((project) => {
-                // const generatedColumns = Math.floor(Math.random() * 3) + 1;
-                // const generatedRows = Math.floor(Math.random() * 2) + 1;
                 return (
-                  <GridItem
-                    minH={12}
-                    rowSpan={2}
-                    colSpan={2}
-                    key={project.id}
-                    boxShadow='rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-                      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px'
-                  >
-                    <Link href={project.link} target='_blank'>
-                      <Flex
-                        direction='column'
-                        align='center'
-                        position='relative'
-                        justify='center'
-                      >
-                        <Text
-                          position='absolute'
-                          zIndex='1'
-                          color='black'
-                          bg='#f3f1f5'
-                          w='full'
-                          p='12px 0'
-                        >
-                          {project.title}
+                  <GridItem minH={12} key={project.id}>
+                    <Flex
+                      justify='space-between'
+                      direction={['column', 'row-reverse']}
+                    >
+                      <Box>
+                        {project.image ? (
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            width={200}
+                            height={250}
+                          />
+                        ) : (
+                          <Image
+                            src={EmptyBookCover}
+                            alt={project.title}
+                            width={200}
+                            height={250}
+                          />
+                        )}
+                      </Box>
+                      <Flex direction='column'>
+                        <Text color='black' bg='#f3f1f5' w='full' p='12px'>
+                          <Link href={project.link} target='_blank'>
+                            {project.title}
+                          </Link>
                         </Text>
-                        <Box
-                          transition='0.1s ease-in-out'
-                          _hover={{ filter: 'opacity(0.4)' }}
-                          maxW={200}
-                          maxH={250}
-                        >
-                          {project.image ? (
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              width={200}
-                              height={250}
-                            />
-                          ) : (
-                            <Image
-                              src={EmptyBookCover}
-                              alt={project.title}
-                              width={200}
-                              height={250}
-                            />
-                          )}
+                        <Box textAlign='start' mt={12} maxW={500}>
+                          <Text>{project.description}</Text>
+                        </Box>
+                        <Box textAlign='start' mt={16}>
+                          <Heading size='md' mb={2}>
+                            stack:
+                          </Heading>
+                          <Grid templateColumns='repeat(3, 1fr)' gap={1}>
+                            {project.stack.map((tech) => {
+                              return <Badge key={tech}>{tech}</Badge>;
+                            })}
+                          </Grid>
                         </Box>
                       </Flex>
-                    </Link>
+                    </Flex>
                   </GridItem>
                 );
               })}
