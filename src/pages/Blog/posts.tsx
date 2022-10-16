@@ -10,7 +10,6 @@ interface IProps {
   posts: PostProps[];
 }
 const Posts: FC<IProps> = ({ posts }) => {
-    console.log(posts)
     return (
     <>
       {posts.map((post: PostProps) => (
