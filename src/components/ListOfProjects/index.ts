@@ -52,6 +52,7 @@ export const ListOfProjects = [
         title: 'Memorization cards',
         description:
           'A website, where user can find cards with pokemon description, and change the title and body as user wants, and save it to local storage. User can also delete the card, and add new card. There is also admin panel, which helps to control ReadOnly property of cards.',
+        link: 'https://github.com/sabrina34352/task-rep',
         stack: [
           'React',
           'Redux',
