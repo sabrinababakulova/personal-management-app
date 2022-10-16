@@ -2,10 +2,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import Axios from 'axios';
-import Posts from './posts';
+import { Box } from '@chakra-ui/react';
+
+type PostProps = {
+  title: string;
+  body: string;
+  id: number;
+  date: Date;
+};
 const Blog = () => {
   const { t } = useTranslation('common');
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<PostProps[]>([]);
 
   const getPosts = async () => {
     await Axios.get('/api/post/show').then((res) => {
@@ -16,9 +23,16 @@ const Blog = () => {
   useEffect(() => {
     getPosts();
   }, []);
-  console.log(posts);
-  // return <div>{t('blog.errMsg')}</div>;
-  return <Posts posts={posts} />;
+
+  return (
+    <>
+      {posts ? (
+        posts.map((post: PostProps) => <Box key={post.id}>{post.title}</Box>)
+      ) : (
+        <div>{t('blog.errMsg')}</div>
+      )}
+    </>
+  );
 };
 
 // @ts-ignore
