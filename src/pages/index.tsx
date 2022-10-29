@@ -3,13 +3,9 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import GridInfo from '../components/GridInfo';
 const Home: NextPage = () => {
-  const router = useRouter();
-  const { locale } = router;
-  console.log(locale);
   const { t } = useTranslation('common');
   return (
     <>
@@ -86,7 +82,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale || 'en', ['common'])),
-      // Will be passed to the page component as props
     },
   };
 }
