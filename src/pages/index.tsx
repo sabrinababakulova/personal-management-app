@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import GridInfo from '../components/GridInfo';
 const Home: NextPage = () => {
   const { t } = useTranslation('common');
+  // such a big change hot damn
   return (
     <>
       <Box h='100vh'>
