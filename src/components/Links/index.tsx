@@ -8,7 +8,7 @@ export const links = [
     icon: <Telegram />,
   },
   {
-    href: "https://www.instagram.com/sabrina_smthelse/",
+    href: "https://www.instagram.com/sabrina.stop/",
     icon: <Instagram />,
   },
   {
@@ -16,7 +16,7 @@ export const links = [
     icon: <LinkedIn />,
   },
   {
-    href: "https://www.github.com/sabrina34352",
+    href: "https://www.github.com/sabrinababakulova",
     icon: <Github />,
   },
 ];
